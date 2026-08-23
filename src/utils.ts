@@ -31,3 +31,21 @@ export function toLinkedList(array: number[]): ListNode {
 
   return list;
 }
+
+export function swapPairs(head: ListNode): ListNode | null {
+  let dummy = new ListNode(0, head);
+  let prev = dummy;
+
+  while (prev.next && prev.next.next) {
+    let first = prev.next;
+    let second = prev.next.next;
+
+    prev.next = second;
+    first.next = second.next;
+    second.next = first;
+
+    prev = first;
+  }
+
+  return dummy.next;
+}
