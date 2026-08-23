@@ -1,4 +1,5 @@
 import { ListNode } from '~/add-two-numbers';
+import { reverseList } from '~/reverse-linked-list';
 
 export function toArray(list: ListNode | null): number[] {
   if (list) {
@@ -48,4 +49,13 @@ export function swapPairs(head: ListNode): ListNode | null {
   }
 
   return dummy.next;
+}
+
+export function show(list: ListNode | null): string {
+  if (list) {
+    return JSON.stringify(toArray(list));
+  }
+  else {
+    return JSON.stringify([]);
+  }
 }
